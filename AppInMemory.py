@@ -71,6 +71,7 @@ def single_book(id):
                 return jsonify(book), 200
             
     if request.method == "DELETE":
+        # using enumerate() so that we can keep a count on index
         for indx, book in enumerate(book_list):
             if book["id"] == id:
                 book_list.pop(indx)
